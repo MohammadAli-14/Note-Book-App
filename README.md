@@ -112,7 +112,6 @@ NoteBook-App/
 │   ├── tailwind.config.js  # Tailwind CSS config
 │   └── .env                # Environment variables
 │
-├── package.json            # Root package.json (optional)
 └── README.md              # This file
 ```
 
@@ -126,8 +125,8 @@ NoteBook-App/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/MohammadAli-14/NoteBook-App.git
-cd NoteBook-App
+git clone https://github.com/MohammadAli-14/Note-Book-App.git
+cd Note-Book-App
 ```
 
 ### 2. Backend Setup
@@ -401,7 +400,7 @@ We welcome contributions! Please follow these steps:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) file for details.
 
 ## 👥 Authors
 
@@ -417,10 +416,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Important Links
 
+- **Main Repository**: [https://github.com/MohammadAli-14/Note-Book-App](https://github.com/MohammadAli-14/Note-Book-App)
+- **Frontend Repository**: [https://github.com/MohammadAli-14/NoteBook-App-Frontend](https://github.com/MohammadAli-14/NoteBook-App-Frontend)
 - **Live Demo**: [https://note-book-app-frontend.vercel.app/](https://note-book-app-frontend.vercel.app/)
-- **Frontend Repository**: [NoteBook-App-Frontend](https://github.com/MohammadAli-14/NoteBook-App-Frontend)
-- **Backend Repository**: [NoteBook-App-Backend](https://github.com/MohammadAli-14/NoteBook-App-Backend)
-- **Full Stack Repository**: [NoteBook-App](https://github.com/MohammadAli-14/NoteBook-App)
 
 ---
 <div align="center">
