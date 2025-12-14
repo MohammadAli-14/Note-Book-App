@@ -17,7 +17,8 @@ const __dirname = path.resolve();
 if (process.env.NODE_ENV !== "production") {
   app.use(
     cors({
-      origin: "http://localhost:5173",
+      origin: "https://note-book-app-frontend.vercel.app" ||
+      "http://localhost:5173",
     })
   );
 }
