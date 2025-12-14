@@ -13,19 +13,24 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const __dirname = path.resolve();
 
-// middleware
-if (process.env.NODE_ENV !== "production") {
-  app.use(
-    cors({
-      origin: "https://note-book-app-frontend.vercel.app" ||
-      "http://localhost:5173",
-    })
-  );
-}
+// =================================================================
+//  CORS CONFIGURATION (THE FIX)
+// =================================================================
+// We use an array to allow both the Production URL and Localhost.
+// This middleware is now applied in ALL environments, not just dev.
+app.use(
+  cors({
+    origin: [
+      "https://note-book-app-frontend.vercel.app", // Your Vercel Frontend
+      "http://localhost:5173",                     // Your Local Vite Frontend
+    ],
+    credentials: true, // Allow cookies/headers to be sent if needed
+  })
+);
+
 app.use(express.json()); // this middleware will parse JSON bodies: req.body
 app.use(rateLimiter);
 
-// our simple custom middleware
 // app.use((req, res, next) => {
 //   console.log(`Req method is ${req.method} & Req URL is ${req.url}`);
 //   next();
@@ -33,6 +38,11 @@ app.use(rateLimiter);
 
 app.use("/api/notes", notesRoutes);
 
+// =================================================================
+//  STATIC FILES (Optional fallback)
+// =================================================================
+// Since your frontend is on Vercel, this block is less critical, 
+// but we keep it to prevent breaking any existing hybrid setup.
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
